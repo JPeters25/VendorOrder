@@ -24,10 +24,8 @@ namespace VendorTracker.Tests
     public void GetDetails_ReturnsDetails_String()
     {
       string details = "4 loafs of bread";
-
       Order newOrder = new Order(details);
       string result = newOrder.Details;
-
       Assert.AreEqual(details, result);
     }
 
@@ -36,14 +34,19 @@ namespace VendorTracker.Tests
     {
       string details = "4 loafs of bread";
       Order newOrder = new Order(details);
-
       string updatedDetails = "6 loafs of bread";
       newOrder.Details = updatedDetails;
       string result = newOrder.Details;
-
       Assert.AreEqual(updatedDetails, result);
-
     }
-    
+
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_OrderList()
+    { 
+      List<Order> newOrder = new List<Order> { };
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
+
   }
 }
