@@ -1,7 +1,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace VendorOrder
+namespace VendorTracker
 {
   public class Program
   {
