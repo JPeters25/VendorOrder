@@ -31,5 +31,19 @@ namespace VendorTracker.Tests
       Assert.AreEqual(details, result);
     }
 
+    [TestMethod]
+    public void SetDetails_SetDetails_String()
+    {
+      string details = "4 loafs of bread";
+      Order newOrder = new Order(details);
+
+      string updatedDetails = "6 loafs of bread";
+      newOrder.Details = updatedDetails;
+      string result = newOrder.Details;
+
+      Assert.AreEqual(updatedDetails, result);
+
+    }
+    
   }
 }
