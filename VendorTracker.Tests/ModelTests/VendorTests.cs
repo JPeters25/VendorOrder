@@ -11,7 +11,7 @@ namespace VendorTracker.Tests
   {
     public void Dispose()
     {
-      // Vendor.ClearAll();
+      Vendor.ClearAll();
     }
 
     [TestMethod]
@@ -26,16 +26,18 @@ namespace VendorTracker.Tests
     {
       string name = "Test Vendor";
       Vendor newVendor = new Vendor(name);
-      string result = newVendor.Name;
+      string result = newVendor.vendorName;
       Assert.AreEqual(name, result);
     }
 
     [TestMethod]
-    public void GetId_ReturnsVendorId_Int()
+    public void GetId_VendorsInstantiaeWithAnIdAndGetterReturns_Int()
     {
       string name = "Test Vendor";
       Vendor newVendor = new Vendor(name);
+
       int result = newVendor.Id;
+
       Assert.AreEqual(1, result);
     }
   }
