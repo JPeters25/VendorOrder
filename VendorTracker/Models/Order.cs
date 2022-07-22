@@ -4,7 +4,7 @@ namespace VendorTracker.Models
 {
   public class Order
   {
-    public string Details {get; set; }
+    public string Details { get; set; }
     public int Id { get; }
     private static List<Order> _instances = new List<Order> { };
    
@@ -12,7 +12,16 @@ namespace VendorTracker.Models
     {
       Details = details;
       _instances.Add(this);
-      Id = 0;
+      Id = _instances.Count;
+    }
+
+    public static List<Order> GetAll()
+    {
+      return _instances;
+    }
+    public static void ClearAll()
+    {
+      _instances.Clear();
     }
   }
 }
