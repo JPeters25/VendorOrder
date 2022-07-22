@@ -10,7 +10,7 @@ namespace VendorTracker.Tests
   {
     public void Dispose()
     {
-      // Order.ClearAll();
+      Order.ClearAll();
     }
 
     [TestMethod]
@@ -55,10 +55,18 @@ namespace VendorTracker.Tests
       string details02 = "2 dozen pastris";
       Order newOrder1 = new Order(details01);
       Order newOrder2 = new Order(details02);
-      List<Order> newOrder = new List<Order> {newOrder1, newOrder2};
+      List<Order> newList = new List<Order> {newOrder1, newOrder2};
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
 
+    [TestMethod]
+    public void GetId_OrdersInstatiateWithAnIdAndGetterReturns_Id()
+    {
+      string details = "4 loafs of bread";
+      Order newOrder = new Order(details);
+      int result = 0;
+      Assert.AreEqual(1, result);
+    }
   }
 }
