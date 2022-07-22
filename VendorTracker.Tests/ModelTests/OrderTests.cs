@@ -65,7 +65,7 @@ namespace VendorTracker.Tests
     {
       string details = "4 loafs of bread";
       Order newOrder = new Order(details);
-      int result = 0;
+      int result = newOrder.Id;
       Assert.AreEqual(1, result);
     }
   }
