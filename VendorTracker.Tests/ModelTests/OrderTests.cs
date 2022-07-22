@@ -52,7 +52,7 @@ namespace VendorTracker.Tests
     public void GetAll_ReturnsOrders_OrderList()
     {
       string details01 = "4 loafs of bread";
-      string details02 = "2 dozen pastris";
+      string details02 = "2 dozen pastries";
       Order newOrder1 = new Order(details01);
       Order newOrder2 = new Order(details02);
       List<Order> newList = new List<Order> {newOrder1, newOrder2};
@@ -67,6 +67,18 @@ namespace VendorTracker.Tests
       Order newOrder = new Order(details);
       int result = newOrder.Id;
       Assert.AreEqual(1, result);
+    }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectItem_Item()
+    {
+      string details01 = "4 loafs of bread";
+      string details02 = "2 dozen patries";
+      Order newOrder1 = new Order(details01);
+      Order newOrder2 = new Order(details02);
+      Order result = Order.Find(2);
+      Assert.AreEqual(newOrder2, result);
+
     }
   }
 }
